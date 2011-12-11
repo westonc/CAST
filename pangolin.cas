@@ -1,0 +1,16 @@
+#book .doe {
+	content: 'a deer';
+}
+
+.col #foot {
+	content: 'foot';
+}
+
+#content {
+	content: file_get_contents('pangolin.txt');
+}
+
+#book {
+	content: 'All About Pangolins '.(4+3).'th edition';
+}
+

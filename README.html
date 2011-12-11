@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>CAST | Content-addressed style templating</title>
+		<meta http-equiv="content-type" content="text/html; charset=us-ascii"/>
+	</head>
+<body>
+<div id="page">
+<div id="header">
+	<h1 id="title"><a href="CAST.tgz">CAST | Content-addressed style templating</a></h1>
+</div>
+<div id="thorax">
+	<div class="content">
+	<h2>The Basic Idea</h2>
+	<p>A template is plain vanilla XHTML. There's nothing else inside of it. You don't mark it up with templating syntax at all -- not even in the way you would with something like <a href="http://wiki.zope.org/ZPT/TAL">TAL</a> or <a href="http://search.cpan.org/~bpostle/Petal-2.19/lib/Petal.pm">Petal</a> (though this is close). </p>
+	<p>Instead, you <em>address</em> your content into different elements inside the document using CSS or XPath selectors which specify those elements</p>
+	<h2>Usage</h2>
+	<div><code><pre>$t = new Template('yourfile.html');
+$t-&gt;fill('#nav',$someMarkup);
+$t-&gt;fill('#header',$otherMarkup);
+echo $t-&gt;asXML();
+	</pre></code></div>
+	<p>Or, assuming the following contents for a file called "content.cas":</p>
+	<div><code><pre>
+.col #foot {
+    content: 'footer content';
+}
+
+#content {
+    content: file_get_contents('pangolin.txt');
+}
+</pre></code></div>
+	<p>you pass that to your Template, and choose the <tt>fillByCAS</tt> method.</p>
+	<div><code><pre>$t = new Template('yourfile.html','content.cas');
+$t-&gt;fillByCAS();
+echo $t-&gt;asXML();
+	</pre></code></div>
+	<p>The script <tt>cssfill.php</tt> that's part of the alpha <a href="CAST.tgz">tarball distribution</a> uses this later metod, taking just such a content addressing file as its first argument, an xhtml file as its second, and writing the combined result to stdout (try <tt>./cssfill.php pangolin.cas pangolin.html</tt> as a sample invocation).</p>
+	</div>
+	<div>I'm successfully using CAST in a few personal projects right now (my <a href="http://weston.canncentral.org/writing">blog</a> among them), but it should be noted it's still essentially an experiment at the moment. Be wary of using it in an important production environment. I'd love to hear from you if you do find it interesting or useful, however. </div>
+</div>
+</body>
+</html>
