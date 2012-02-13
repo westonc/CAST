@@ -1,0 +1,8 @@
+CAST is Copyright 2006 by Weston Cann. 
+
+It is distributed under the terms of version 3 of the Limited GNU Public License.
+
+See:
+
+http://www.gnu.org/licenses/lgpl.html
+http://www.gnu.org/licenses/gpl-3.0.html
