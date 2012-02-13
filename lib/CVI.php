@@ -1,9 +1,8 @@
 <?php
 /* Class for Interpreting Values in Content Adress Sheet rules
-   (c) 2009 Weston Cann weston@canncentral.org
-   All Rights Reserved - This isn't released under any license at all
-   yet, and unless I gave it to you personally, you don't have the rights
-   to use it. */
+This file is part of the CAST software project and is subject 
+to its terms and conditions, defined in LICENSE.txt */
+
 
 //error_reporting(E_ALL ^ E_NOTICE);
 require_once('MSGS.class.php');

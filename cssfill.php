@@ -1,5 +1,7 @@
 #!/usr/local/bin/php -q
 <?php
+/* This file is part of the CAST software project and is 
+subject to its terms and conditions, defined in LICENSE.txt */
 
 include_once("lib/Template.php");
 include_once("lib/misc.php");
