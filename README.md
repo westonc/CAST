@@ -35,6 +35,6 @@ $t->fillByCAS();
 echo $t->asXML();
 ```
 	
-The script cssfill.php that's part of the alpha tarball distribution uses this later metod, taking just such a content addressing file as its first argument, an xhtml file as its second, and writing the combined result to stdout (try ./cssfill.php pangolin.cas pangolin.html as a sample invocation).
+The script cssfill.php that's part of this very rough repo uses this later metod, taking just such a content addressing file as its first argument, an xhtml file as its second, and writing the combined result to stdout (try ./cssfill.php pangolin.cas pangolin.html as a sample invocation).
 
-I'm successfully using CAST in a few personal projects right now (my blog among them), but it should be noted it's still essentially an experiment at the moment. Be wary of using it in an important production environment. I'd love to hear from you if you do find it interesting or useful, however.
+I've successfully used CAST in a few personal projects (a personal blog among them), but it should be noted it's still essentially an experiment. Be wary of using it in an important production environment. I'd love to hear from you if you do find it interesting or useful, however.
